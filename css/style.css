@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant+Upright:wght@300;400;500;600;700&family=Indie+Flower&family=Lavishly+Yours&family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Indie+Flower&family=Lavishly+Yours&family=Patrick+Hand&display=swap');
+
+html {
+    font-family: 'Cormorant Garamond', "Noto Serif JP", serif;
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    color: #333;
+    line-height: 1.8;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    background-color: linear-gradient(
+     to bottom,
+     #f4f2ee 0%,
+     #ebe7e1 100%);
+}
+
+.page-wrapper {
+    background-color: rgb(255, 250, 244);
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.bubble-layer {
+    position: fixed;
+    width: 100%;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.8;
+    filter: blur(0.5px);
+    will-change: transform;
+    background: 
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(255, 255, 255, 0.9),
+            rgba(200, 230, 255, 0.3) 50%,
+            rgba(180, 220, 255, 0.15)
+        );
+    backdrop-filter: blur(6px);
+    box-shadow:
+        /* inset -8px -8px 16px rgba(255, 255, 255, 0.6), */
+        /* inset 8px 8px 16px rgba(200, 220, 255, 0.3); */
+        0 0 20px rgba(200, 230, 255, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* =============
+   main 
+   =============*/
+.main {
+    z-index: 2;
+}
+
+/* =============
+   hero
+   ============= */
+#hero {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img {
+    position: absolute;
+    width: 50%;
+    margin: auto 0;
+    right: 0;
+    animation: float-img 6s ease-in-out infinite;
+}
+
+@keyframes float-img {
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-10px);}
+    100%{transform: translateY(0);}
+}
+
+.hero-title {
+    transform: translateX(-30%);
+}
+
+.hero-title * {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.contact {
+    display: block;
+}
+
+.contact::before {
+    content: "[";
+    margin-right: 8%;
+}
+
+.contact::after {
+    content: "]";
+    margin-left: 8%;
+}
+
+.contact:hover {
+    color: rgb(99, 231, 187);
+    text-decoration: underline;
+}
+
+h1 {
+    font-family: 'Cormorant Upright', serif;
+    font-weight: 300;
+    font-size: 1.8em;
+}
+
+p {
+    font-family: 'Cormorant Upright', serif;
+}
+
+/* ==============
+   concept
+   ============== */
+#concept {
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+#concept p {
+    margin-bottom: 50px;
+}
+
+/* ==============
+   parallax
+   ============== */
+#parallax {
+    display: flex;
+    min-height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==============
+   philosophy
+   ============== */
+#philosophy {
+    display: flex;
+    min-height: 60vh;
+    padding: 50px;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(255, 246, 245);
+}
+
+.philosophy-items {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* ==============
+   how-use
+   ============== */
+#how-use {
+    display: flex;
+    min-height: 70vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.how-use-items {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 50px;
+}
+
+.how-use-items * {
+    text-align: left;
+}
+
+/* ==============
+   closing
+   ============== */
+#closing {
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 600px;
+    padding: 0 10%;
+    background-color: rgb(252, 250, 246);
+    overflow: hidden;
+}
+
+#closing img {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 50%;
+    object-fit: cover;
+}
+
+.closing-items {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 50%;
+    text-align: center;
+}
+
+/* ==============
+   footer
+   ============== */
+#footer {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    padding-bottom: 80px;
+}
+
+/* ==============
+   #fade-section
+   ============== */
+.fade-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.fade-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==============
+   responsive
+   ============== */
+@media screen and (max-width: 768px) {
+    #hero {
+        flex-direction: column;
+        padding: 50px;
+        gap: 50px;
+    }
+
+    .hero-img {
+        position: relative;
+        width: 180px;
+        top: 40px;
+        right: auto;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 1em;
+    }
+
+    .hero-title {
+        transform: translateX(0);
+        text-align: center;
+    }
+
+    .hero-title * {
+        margin-bottom: 30px;
+    }
+
+    .contact {
+        display: inline-block;
+        padding: 10px 30px;
+        border: 1px solid #333;
+        border-radius: 30px;
+        letter-spacing: 0.1em;
+        margin-bottom: 100px;
+        white-space: nowrap;
+    }
+
+    .contact::before,
+    .contact::after {
+        content: "";
+        margin: 0;
+    }
+
+    /* ==============
+       philosophy
+       ============== */
+    #philosophy {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .philosophy-items {
+        margin-bottom: 50px;
+    }
+
+    /* ==============
+       closing
+       ============== */
+    #closing {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    #closing img {
+        position: relative;
+        left: auto;
+    }
+
+    .closing-items {
+        
+    }
+}
